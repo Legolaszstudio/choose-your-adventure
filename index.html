@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A summer vacation at the grandparents </title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="data-container">
+        <h1 class="title">A summer vacation at the grandparents...</h1>
+        <br>
+        <a class="startButton" onclick="startTheStory()">Let's jump into the story</a>
+    </div>
+
+    <script>
+        async function startTheStory() {
+            $(".startButton").html('<div class="centerLoader"><div class="loader"></div></div>');
+            window.location.href = "/story/story.html";
+        }
+    </script>
+</body>
+
+</html>
