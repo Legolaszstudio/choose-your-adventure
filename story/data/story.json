@@ -257,7 +257,7 @@
         },
         {
             "id": "chickens2",
-            "content": "Just as you would grab the eggs a rooster attacks you, what do you do?",
+            "content": "Just as you grab some of the eggs a rooster attacks you, what do you do?",
             "image": {
                 "file": "rooster.jpg",
                 "placeholder": "A rooster"

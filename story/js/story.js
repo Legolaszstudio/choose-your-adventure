@@ -41,16 +41,16 @@ function nextCard(nextID) {
                 if (currentCard.id == "saddleHorse") {
                     switch (nextID.split(" ")[1]) {
                         case "1":
-                            imgHTML = "<img src='images/horses/horseOne.jpg' />";
+                            imgHTML = "<img src='images/horses/horseOne.jpg' style='width: 350px; height: 50%;' />";
                             break;
                         case "2":
-                            imgHTML = "<img src='images/horses/horseTwo.jpg' />";
+                            imgHTML = "<img src='images/horses/horseTwo.jpg' style='width: 350px; height: 50%;' />";
                             break;
                         case "3":
-                            imgHTML = "<img src='images/horses/horseThree.jpg' />";
+                            imgHTML = "<img src='images/horses/horseThree.jpg' style='width: 350px; height: 50%;' />";
                             break;
                         case "4":
-                            imgHTML = "<img src='images/horses/horseFour.jpg' />";
+                            imgHTML = "<img src='images/horses/horseFour.jpg' style='width: 350px; height: 50%;' />";
                             break;
                         default:
                             break;
