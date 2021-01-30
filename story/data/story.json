@@ -1,0 +1,348 @@
+{
+    "story": [{
+            "id": "start",
+            "content": "<p>It's summertime, and you go to your grandparents' house in the countryside for your vacations.</p>",
+            "image": {
+                "file": "farm.jpg",
+                "placeholder": "Image of a farm"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "start2"
+            }]
+        },
+        {
+            "id": "start2",
+            "content": "<p>Your grandparents go to the shopping centre and you are left home alone. You...</p>",
+            "image": {
+                "file": "shoppingOldAuto.jpg",
+                "placeholder": "Old skoda"
+            },
+            "responses": [{
+                    "content": "<p>Stay inside the house</p>",
+                    "destination": "stayInside"
+                },
+                {
+                    "content": "<p>Go outside</p>",
+                    "destination": "goOutside"
+                }
+            ]
+        },
+        {
+            "id": "stayInside",
+            "content": "<p>You stay inside the house, now where do you want to go?</p>",
+            "image": null,
+            "responses": [{
+                "content": "<p>Stay inside the house</p>",
+                "destination": "start2"
+            }]
+        },
+        {
+            "id": "goOutside",
+            "content": "<p>You go outside, you see some animals. Which animal would you like to go to?</p>",
+            "image": null,
+            "responses": [{
+                    "content": "<p>Cows</p>",
+                    "destination": "cows"
+                },
+                {
+                    "content": "<p>Roosters and chickens</p>",
+                    "destination": "chickens"
+                },
+                {
+                    "content": "<p>Horses</p>",
+                    "destination": "horses"
+                }
+            ]
+        },
+        {
+            "id": "horses",
+            "content": "<p>You see multiple horses, which one would you like to saddle?</p>",
+            "image": null,
+            "responses": [{
+                    "content": "<img src='images/horses/horseOne.jpg' />",
+                    "destination": "saddleHorse 1"
+                },
+                {
+                    "content": "<img src='images/horses/horseTwo.jpg' />",
+                    "destination": "saddleHorse 2"
+                },
+                {
+                    "content": "<img src='images/horses/horseThree.jpg' />",
+                    "destination": "saddleHorse 3"
+                },
+                {
+                    "content": "<img src='images/horses/horseFour.jpg' />",
+                    "destination": "saddleHorse 4"
+                }
+            ]
+        },
+        {
+            "id": "saddleHorse",
+            "content": "<p>You saddled your horse and go outside to the obstacle course.</p>",
+            "image": null,
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "horseDecideObstacle"
+            }]
+        },
+        {
+            "id": "horseDecideObstacle",
+            "content": "<p>There is a wide range of obstacles to choose from, which one would you like to try first?</p>",
+            "image": {
+                "file": "horseObstacle.jpg",
+                "placeholder": "Double jump horse obstacle"
+            },
+            "responses": [{
+                    "content": "<p>Try the easiest one first and slowly make progress</p>",
+                    "destination": "becomeFamousHorseRider"
+                },
+                {
+                    "content": "<p>Try the hardest one first, I'm confident with horses</p>",
+                    "destination": "horseAccident"
+                }
+            ]
+        },
+        {
+            "id": "horseAccident",
+            "content": "<p>Ouch, that hurt! The horse stops right in front of the obstacle and you fall to the ground. The horse accidentally steps on you, so you are rushed to a hospital, the doctor tells you it's nothing serious, just stay in bed for a few days.</p>",
+            "image": {
+                "customStyle": "width: 250px; height: 50%;",
+                "file": "horseScared.png",
+                "placeholder": "Horse scared"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "becomeFamousHorseRider",
+            "content": "<p>WOW! You made your first jump very easily, slowly you progress towards the hardest obstacles, no doubt you cleared them easily. You practice every day and become a world-famous horse showjumper.</p>",
+            "image": {
+                "customStyle": "width: 500px; height: 50%;",
+                "file": "horseJumping.jpg",
+                "placeholder": "Horse jumping"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "cows",
+            "content": "<p>You go to the cows, where you find a bucket, a bar of soap and a pair of rubber gloves</p>",
+            "image": {
+                "file": "cows.jpg",
+                "placeholder": "cows"
+            },
+            "responses": [{
+                "content": "<p>Milk one of the cows</p>",
+                "destination": "milkTheCow"
+            }]
+        },
+        {
+            "id": "milkTheCow",
+            "content": "<p>You milked one of the cows, now you have a bucket full of milk.<br>What do you want to do with all this milk?</p>",
+            "image": {
+                "file": "manMilkingCow.jpg",
+                "placeholder": "Man milking the cow"
+            },
+            "responses": [{
+                    "content": "<p>Drink the milk</p>",
+                    "destination": "youDrankTheMilk"
+                },
+                {
+                    "content": "<p>Make butter from the milk</p>",
+                    "destination": "makeButterFromMilk"
+                }
+            ]
+        },
+        {
+            "id": "makeButterFromMilk",
+            "content": "<p>You make butter but don't know what spices to add to you mixture, so you improvise a bit.<br>Your grandparents arrive home and see what you're doing, your grandma immediately tastes the butter. She makes a weird face then with a smile she tells you that she has never tasted such delicious and creamy butter.</p>",
+            "image": {
+                "file": "butterOne.jpg",
+                "placeholder": "Butter"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "makeButterFromMilk2"
+            }]
+        },
+        {
+            "id": "makeButterFromMilk2",
+            "content": "You give her your recipe and she starts selling your butter at the marketplace. Soon a businessman recognises your expertise in making butter and makes you world-famous.",
+            "image": {
+                "file": "butterTwo.jpg",
+                "placeholder": "Butter and flour"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "youDrankTheMilk",
+            "content": "You drink the milk, suddenly you start feeling weird. You can understand what the cows are saying. The cow you milked turns to you and says:",
+            "image": {
+                "file": "drinkingMilk.jpg",
+                "placeholder": "Pouring milk into a glass"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "cowSays"
+            }]
+        },
+        {
+            "id": "youDrankTheMilk",
+            "content": "You drink the milk, suddenly you start feeling weird. You can feel your throat getting sore. You suddenly fall unconsciously to the floor.",
+            "image": {
+                "file": "drinkingMilk.jpg",
+                "placeholder": "Pouring milk into a glass"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "hospitalHarmfulMicrobes"
+            }]
+        },
+        {
+            "id": "hospitalHarmfulMicrobes",
+            "content": "You wake up in a hospital bed, a nurse walks in and tells you that the milk you drank had harmful microbes in it. If everything goes alright you can leave the hospital within 3 days.",
+            "image": {
+                "file": "hospitalBed.png",
+                "placeholder": "Hospital bed"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "cowSays",
+            "content": "I gave you superpowers because we are in great danger. You have to save the world from a supervillain, who wants to steal all of our milk!",
+            "image": {
+                "file": "cowSays.jpg",
+                "placeholder": "Cow with tongue out"
+            },
+            "responses": [{
+                "content": "<p>To be continued....</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "chickens",
+            "content": "You go to the chickens, where you find some eggs in their nests. <br> You put some of the eggs into your basket.",
+            "image": {
+                "file": "chickenWithEgg.jpg",
+                "placeholder": "Chicken with an egg"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "chickens2"
+            }]
+        },
+        {
+            "id": "chickens2",
+            "content": "You walk back to the house. <br> You bake a chocolate cake for your grandparents using the eggs you've just collected.",
+            "image": {
+                "customStyle": "width: 250px; height: 50%;",
+                "file": "chocolateCake.jpg",
+                "placeholder": "Chocolate Cake"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "chickens3"
+            }]
+        },
+        {
+            "id": "chickens2",
+            "content": "Just as you would grab the eggs a rooster attacks you, what do you do?",
+            "image": {
+                "file": "rooster.jpg",
+                "placeholder": "A rooster"
+            },
+            "responses": [{
+                    "content": "<p>Run away</p>",
+                    "destination": "runAwayFromRooster"
+                },
+                {
+                    "content": "<p>Attack the rooster with your basket</p>",
+                    "destination": "attackRooster"
+                }
+            ]
+        },
+        {
+            "id": "runAwayFromRooster",
+            "content": "You ran away from the rooster into a nearby forest. You lose the rooster but now you can't find your way out...",
+            "image": {
+                "file": "forest.jpg",
+                "placeholder": "Forest"
+            },
+            "responses": [{
+                "content": "<p>To be continued...</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "attackRooster",
+            "content": "You start fighting with the rooster. Suddenly you see a police officer passing by, he stops his car right in front of you. You sigh in relief, finally someone who can help me!",
+            "image": {
+                "file": "policeCar.jpg",
+                "placeholder": "A police car"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "attackRooster2"
+            }]
+        },
+        {
+            "id": "attackRooster2",
+            "content": "The officer steps out of his car, he fires his gun to scare the rooster away, then puts you into handcuffs. He tells you that you will be taken to the police station for questioning, because he's just clearly witnessed animal cruelty.",
+            "image": {
+                "file": "handsBehindBars.jpg",
+                "placeholder": "Hands behind bars"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "afterQuestioning"
+            }]
+        },
+        {
+            "id": "afterQuestioning",
+            "content": "After questioning you are released, because the police understood that you didn't want to harm the rooster, it just attacked you. <br> A police officer takes you back to the house where you find your grandparents worrying because they couldn't find you. <br> You calm them down, tell them what has happened and have a good laugh about it!",
+            "image": {
+                "file": "farm.jpg",
+                "placeholder": "Image of a farm"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "afterQuestioning",
+            "content": "After questioning you are sent to court because the policemen couldn't decide what has really happened...",
+            "image": {
+                "file": "gavel.jpg",
+                "placeholder": "Image of a gavel"
+            },
+            "responses": [{
+                "content": "<p>To be continued...</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "chickens3",
+            "content": "Your grandparents arrive and you have a nice dinner together in the garden.",
+            "image": {
+                "file": "dinnerOutside.jpg",
+                "placeholder": "Dinner outside"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        }
+    ]
+}

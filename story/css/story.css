@@ -1,0 +1,113 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #232323;
+    color: white;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+.text {
+    font-size: x-large;
+    padding-top: 5%;
+    text-align: center;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.img {
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    padding-top: 2% !important;
+    position: relative;
+}
+
+img {
+    width: 50%;
+    height: auto;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+}
+
+th {
+    padding: 0;
+    position: relative;
+}
+
+.responses {
+    padding-top: 5%;
+}
+
+.answerRed {
+    background-color: #c74444;
+    border: 1px solid #ab1818;
+    text-shadow: 0px 1px 0px #662727;
+}
+
+.answerGreen {
+    background-color: #44c767;
+    border: 1px solid #18ab29;
+    text-shadow: 0px 1px 0px #2f6627;
+}
+
+.answerBlue {
+    background-color: #44bcc7;
+    border: 1px solid #18abab;
+    text-shadow: 0px 1px 0px #276663;
+}
+
+.answerYellow {
+    background-color: #aba92b;
+    border: 1px solid #a9ab18;
+    text-shadow: 0px 1px 0px #656627;
+}
+
+.answerOrange {
+    background-color: #FFA500;
+    border: 1px solid #b27300;
+    text-shadow: 0px 1px 0px #7f5200;
+}
+
+.answerButton {
+    border-radius: 28px;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 17px;
+    padding: 10px 10px;
+    text-decoration: none;
+    width: 1%;
+    height: max-content;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 768px) {
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .img {
+        width: 75%;
+        height: auto;
+        margin: 0 auto;
+        padding: 10px;
+        padding-top: 5% !important;
+        position: relative;
+    }
+}
+
+.fullWidth {
+    width: 100vw;
+}
