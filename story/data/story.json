@@ -30,11 +30,118 @@
         },
         {
             "id": "stayInside",
-            "content": "<p>You stay inside the house, now where do you want to go?</p>",
-            "image": null,
+            "content": "<p>You stay inside the house, you can stay on the current floor, go up to the attic or go down to the basement?<br>What do you choose?</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "upOrDown.jpg",
+                "placeholder": "Staircase"
+            },
             "responses": [{
-                "content": "<p>Stay inside the house</p>",
-                "destination": "start2"
+                    "content": "<p>Go to the attic</p>",
+                    "destination": "attic"
+                },
+                {
+                    "content": "<p>Stay on this floor</p>",
+                    "destination": "stayHere"
+                },
+                {
+                    "content": "<p>Go down to the basement</p>",
+                    "destination": "basement"
+                }
+            ]
+        },
+        {
+            "id": "basement",
+            "content": "<p>You go down into the basement. There you can find some cans stockpiled and a bookshelf.</p>",
+            "image": {
+                "file": "basement.jpg",
+                "placeholder": "A basement"
+            },
+            "responses": [{
+                    "content": "<p>Check the cans</p>",
+                    "destination": "tunaCans"
+                },
+                {
+                    "content": "<p>Check the bookshelf</p>",
+                    "destination": "checkTheBookshelf"
+                }
+            ]
+        },
+        {
+            "id": "tunaCans",
+            "content": "<p>You go to the pile of cans. You pick one of the cans up and read its label:<br>They're tuna cans...</p>",
+            "image": {
+                "file": "tunaCans.jpg",
+                "placeholder": "A bunch of tuna cans"
+            },
+            "responses": [{
+                    "content": "<p>Let's inspect the cans a further more</p>",
+                    "destination": "inspectCans"
+                },
+                {
+                    "content": "<p>Let's make tuna salad for lunch</p>",
+                    "destination": "tunaSalad"
+                }
+            ]
+        },
+        {
+            "id": "inspectCans",
+            "content": "<p>Phew!<br>It's good you inspected the cans further, because they have expired almost three months ago.</p>",
+            "image": {
+                "file": "expiry.jpg",
+                "placeholder": "Expiry label on can"
+            },
+            "responses": [{
+                "content": "<p>Go back to the bookshelf</p>",
+                "destination": "checkTheBookshelf"
+            }]
+        },
+        {
+            "id": "tunaSalad",
+            "content": "<p>You go upstairs to make tuna salad. Your grandparents arrive, you sit down to eat. <br> A few hours after lunch you all starting feeling so weird, so you go to a doctor. The doctor tells you it's probably food poisoning. The tuna you have eaten may have gone off a bit.</p>",
+            "image": {
+                "file": "tunaSalad.jpg",
+                "placeholder": "A bowl of tuna salad"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "checkTheBookshelf",
+            "content": "<p>You walk to the bookshelf. There are a lot of books on this bookshelf but one book stands out, it has got no cover nor title written on it. <br> You try to take it off the shelf, but you can't. As you try to pull harder you hear a click and the bookshelf starts rolling away, revealing a secret room.</p>",
+            "image": {
+                "file": "takeBook.jpg",
+                "placeholder": "A hand taking a blank book from a shelf"
+            },
+            "responses": [{
+                "content": "<p>Go inside the secret room</p>",
+                "destination": "secretRoom"
+            }]
+        },
+        {
+            "id": "secretRoom",
+            "content": "<p>You walk to the secret room. You see a lot of special equipment and something that looks like a gun...</p>",
+            "image": {
+                "file": "specialTools.jpg",
+                "placeholder": "An oscilloscope"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "secretRoom2"
+            }]
+        },
+        {
+            "id": "secretRoom2",
+            "content": "<p>Just as you would touch one of the oscilloscopes on the desk, grandpa touches your shoulder. He tells you that he has been working on this gun like thing that allows people to transport from one place to another.<br>You help grandpa fix device's issues, patent it and start selling it. Later that year you receive a Nobel prize for your invention!</p>",
+            "image": {
+                "file": "portalGun.jpg",
+                "placeholder": "A portal gun"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
             }]
         },
         {
