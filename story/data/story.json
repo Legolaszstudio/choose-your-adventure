@@ -64,9 +64,73 @@
                 },
                 {
                     "content": "<p>Play board games</p>",
-                    "destination": "checkTheBookshelf"
+                    "destination": "playBoardGames"
                 }
             ]
+        },
+        {
+            "id": "playBoardGames",
+            "content": "<p>Just as you would start searching for some board games your grandparents arrive. You ask your grandma whether she has some games to play with. <br> She comes comes back with three games, which one do you chose?</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "boardGame.jpg",
+                "placeholder": "A board game"
+            },
+            "responses": [{
+                    "content": "<p>Chess</p>",
+                    "destination": "pickedGame chess"
+                },
+                {
+                    "content": "<p>Monopoly</p>",
+                    "destination": "pickedGame monopoly"
+                },
+                {
+                    "content": "<p>Scrabble</p>",
+                    "destination": "pickedGame scrabble"
+                }
+            ]
+        },
+        {
+            "id": "pickedGame",
+            "content": "<p>You play a game of ?{0}. It was great. You</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "boardGame.jpg",
+                "placeholder": "A board game"
+            },
+            "responses": [{
+                "content": "<p>Play one more game then do something else</p>",
+                "destination": "playOneMoreGame"
+            }, {
+                "content": "<p>Play games until the night comes</p>",
+                "destination": "playManyMoreGame"
+            }]
+        },
+        {
+            "id": "playManyMoreGame",
+            "content": "<p>You play many more games of ?{0} then you go to sleep. <br> The next day you sign up for a ?{0} competition just for fun.<br>You win all the matches and become a ?{0} champion!</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "boardGame.jpg",
+                "placeholder": "A board game"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "playOneMoreGame",
+            "content": "<p>You play one more game of ?{0} then you get bored so you try to use your phone but you have got no signal. <br> So instead you go outside</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "boardGame.jpg",
+                "placeholder": "A board game"
+            },
+            "responses": [{
+                "content": "<p>Go outside</p>",
+                "destination": "goOutside"
+            }]
         },
         {
             "id": "helpWLunch",

@@ -18,8 +18,13 @@ function loadJson() {
 
 function nextCard(nextID) {
     let currentCard = globalJSON.filter(element => element.id == nextID);
-    if (currentCard.length == 0 && nextID.split(" ")[0] == "saddleHorse") {
-        currentCard = globalJSON.filter(element => element.id == "saddleHorse");
+    if (currentCard.length == 0) {
+        if (nextID.split(" ")[0] == "saddleHorse" ||
+            nextID.split(" ")[0] == "pickedGame" ||
+            nextID.split(" ")[0] == "playOneMoreGame" ||
+            nextID.split(" ")[0] == "playManyMoreGame") {
+            currentCard = globalJSON.filter(element => element.id == nextID.split(" ")[0]);
+        }
     }
     if (currentCard.length == 0) {
         console.error(`Couldn't find card with id ${nextID}`);
@@ -33,8 +38,21 @@ function nextCard(nextID) {
             currentCard = currentCard[0];
         }
         $(".content").fadeOut(1000, function() {
+            var innerHtmlContent = currentCard.content;
+            if (nextID.split(" ")[0] == "pickedGame" ||
+                nextID.split(" ")[0] == "playOneMoreGame" ||
+                nextID.split(" ")[0] == "playManyMoreGame") {
+                innerHtmlContent = innerHtmlContent.replaceAll("?{0}", nextID.split(" ")[1]);
+                currentCard.image.file = `games/${nextID.split(" ")[1]}.jpg`;
+            }
+            if (nextID.split(" ")[0] == "pickedGame") {
+                //Pass the argument to the next answer
+                for (var i = 0; i < currentCard.responses.length; i++) {
+                    currentCard.responses[i].destination += " " + nextID.split(" ")[1];
+                }
+            }
             //Load text
-            $("body > div > div.text").html(currentCard.content);
+            $("body > div > div.text").html(innerHtmlContent);
             //Load img if we have one
             if (currentCard.image != null || currentCard.id == "saddleHorse") {
                 let imgHTML;
