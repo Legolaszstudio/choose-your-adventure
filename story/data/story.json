@@ -51,6 +51,90 @@
             ]
         },
         {
+            "id": "stayHere",
+            "content": "<p>You stay on this floor. You...</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "upOrDown.jpg",
+                "placeholder": "Staircase"
+            },
+            "responses": [{
+                    "content": "<p>Help grandma with the lunch</p>",
+                    "destination": "helpWLunch"
+                },
+                {
+                    "content": "<p>Play board games</p>",
+                    "destination": "checkTheBookshelf"
+                }
+            ]
+        },
+        {
+            "id": "helpWLunch",
+            "content": "<p>You can help with the lunch in two ways:</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "upOrDown.jpg",
+                "placeholder": "Staircase"
+            },
+            "responses": [{
+                    "content": "<p>Set the table</p>",
+                    "destination": "setTheTable"
+                },
+                {
+                    "content": "<p>Bake a cake</p>",
+                    "destination": "bakeCakeNoEgg"
+                }
+            ]
+        },
+        {
+            "id": "setTheTable",
+            "content": "<p>You grab a tablecloth and put it on the table. Then go grab some plates...</p>",
+            "image": {
+                "file": "tablecloth.jpg",
+                "placeholder": "A tablecloth"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "setTheTable2"
+            }]
+        },
+        {
+            "id": "setTheTable2",
+            "content": "<p>You also grab some napkins and utensils and put them on the table.</p>",
+            "image": {
+                "file": "plates.jpg",
+                "placeholder": "Plates"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "lunchInGarden"
+            }]
+        },
+        {
+            "id": "setTheTable2",
+            "content": "<p>Your hand slips while reaching for one of the plates. You knock it off the shelf and it brakes to million little pieces. <br> You grandma arrives and tells you that you broke an antique plate. She looks very angry...</p>",
+            "image": {
+                "file": "brokenPlate.jpg",
+                "placeholder": "A broken plate"
+            },
+            "responses": [{
+                "content": "<p>To be continued...</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "bakeCakeNoEgg",
+            "content": "<p>You find all of the necessary ingredients in the kitchen but you can't find eggs. <br> So you go out to grab some...</p>",
+            "image": {
+                "file": "noEggsOnlyChocho.jpg",
+                "placeholder": "Ingredients"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "chickens"
+            }]
+        },
+        {
             "id": "basement",
             "content": "<p>You go down into the basement. There you can find some cans stockpiled and a bookshelf.</p>",
             "image": {
@@ -359,7 +443,7 @@
             },
             "responses": [{
                 "content": "<p>Continue...</p>",
-                "destination": "chickens3"
+                "destination": "lunchInGarden"
             }]
         },
         {
@@ -440,8 +524,8 @@
             }]
         },
         {
-            "id": "chickens3",
-            "content": "Your grandparents arrive and you have a nice dinner together in the garden.",
+            "id": "lunchInGarden",
+            "content": "Your grandparents arrive and you have a nice lunch together in the garden.",
             "image": {
                 "file": "dinnerOutside.jpg",
                 "placeholder": "Dinner outside"
