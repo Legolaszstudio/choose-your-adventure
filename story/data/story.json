@@ -294,13 +294,25 @@
         },
         {
             "id": "setTheTable2",
-            "content": "<p>Your hand slips while reaching for one of the plates. You knock it off the shelf and it breaks into million little pieces. <br> You grandma arrives and tells you that you broke an antique plate. She looks very angry and she slap your face</p>",
+            "content": "<p>Your hand slips while reaching for one of the plates. You knock it off the shelf and it breaks into million little pieces. <br> You grandma arrives and tells you that you broke an antique plate. She looks very angry and she slaps you in the face.</p>",
             "image": {
                 "file": "brokenPlate.jpg",
                 "placeholder": "A broken plate"
             },
             "responses": [{
-                "content": "<p>To be continued...</p>",
+                "content": "<p>Continue...</p>",
+                "destination": "brokenPlate"
+            }]
+        },
+        {
+            "id": "brokenPlate",
+            "content": "<p>You help grandma clean up the mess. <br> She forgives you and everything goes on as usual...</p>",
+            "image": {
+                "file": "brokenPlate.jpg",
+                "placeholder": "A broken plate"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
                 "destination": "theEnd"
             }]
         },
@@ -599,7 +611,7 @@
                 "placeholder": "Cow with tongue out"
             },
             "responses": [{
-                "content": "<p>To be continued....</p>",
+                "content": "<p>The end</p>",
                 "destination": "theEnd"
             }]
         },
@@ -647,13 +659,25 @@
         },
         {
             "id": "runAwayFromRooster",
-            "content": "You ran away from the rooster into a nearby forest. You lose the rooster but now you can't find your way out, because all of the trees look exactly the same and there is no footpath to follow...",
+            "content": "You ran away from the rooster into a nearby forest. You lose the rooster but now you can't find your way out, because all of the trees look exactly the same and there is no footpath to follow so you start yelling...",
             "image": {
                 "file": "forest.jpg",
                 "placeholder": "Forest"
             },
             "responses": [{
-                "content": "<p>To be continued...</p>",
+                "content": "<p>Continue...</p>",
+                "destination": "runAwayFromRooster2"
+            }]
+        },
+        {
+            "id": "runAwayFromRooster2",
+            "content": "A nearby forest ranger hears you shouting and helps you out of the forest. He takes you home and advises you not to go inside the forest again. You get tired after all this excitement and go to sleep.",
+            "image": {
+                "file": "forest.jpg",
+                "placeholder": "Forest"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
                 "destination": "theEnd"
             }]
         },
@@ -701,7 +725,7 @@
                 "placeholder": "Image of a gavel"
             },
             "responses": [{
-                "content": "<p>To be continued...</p>",
+                "content": "<p>The end.</p>",
                 "destination": "theEnd"
             }]
         },
