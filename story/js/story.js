@@ -17,12 +17,76 @@ function loadJson() {
 }
 
 function nextCard(nextID) {
+    if (nextID.split(" ")[0] == "noKey") {
+        //Disable where there was no key
+        $(".text").fadeOut(500);
+        $(".img").fadeOut(500);
+        switch (nextID.split(" ")[1]) {
+            case "1":
+                //You found an old vinyl record case, look there
+                $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").fadeOut(500, function() {
+                    $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").removeClass("answerRed");
+                    $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").addClass("answerDisabled");
+                    $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").attr("onclick", "");
+                    $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").fadeIn(500);
+                    $(".img").html(`<img src="${"images/key/vinyl.jpg"}" alt="Vinyl case" style="width: auto; height: 18vw;"/>`);
+                    $(".text").html("<p>Unfortunately the key isn't in the vinyl case</p>");
+                    $(".text").fadeIn(500);
+                    $(".img").fadeIn(500);
+                });
+                break;
+            case "2":
+                //Look behind the curtains, it has to be there
+                $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").fadeOut(500, function() {
+                    $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").removeClass("answerBlue");
+                    $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").addClass("answerDisabled");
+                    $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").attr("onclick", "");
+                    $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").fadeIn(500);
+                    $(".img").html(`<img src="${"images/key/curtain.jpg"}" alt="Curtains" style="width: auto; height: 18vw;"/>`);
+                    $(".text").html("<p>Unfortunately the key isn't behind the curtains</p>");
+                    $(".text").fadeIn(500);
+                    $(".img").fadeIn(500);
+                });
+                break;
+            case "3":
+                //It has to be in grandpa's old pair of shoes
+                $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").fadeOut(500, function() {
+                    $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").removeClass("answerYellow");
+                    $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").addClass("answerDisabled");
+                    $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").attr("onclick", "");
+                    $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").fadeIn(500);
+                    $(".img").html(`<img src="${"images/key/shoes.jpg"}" alt="Shoes" style="width: auto; height: 18vw;"/>`);
+                    $(".text").html("<p>Unfortunately the key isn't inside grandpa's shoes</p>");
+                    $(".text").fadeIn(500);
+                    $(".img").fadeIn(500);
+                });
+                break;
+            case "4":
+                //Take a look inside grandpa's old backpack
+                $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").fadeOut(500, function() {
+                    $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").removeClass("answerOrange");
+                    $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").addClass("answerDisabled");
+                    $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").attr("onclick", "");
+                    $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").fadeIn(500);
+                    $(".text").html("<p>Unfortunately the key isn't inside grandpa's old backpack</p>");
+                    $(".img").html(`<img src="${"images/key/backpack.jpg"}" alt="Backpack" style="width: auto; height: 18vw;"/>`);
+                    $(".text").fadeIn(500);
+                    $(".img").fadeIn(500);
+                });
+                break;
+            default:
+                break;
+        }
+        return;
+    }
+
     let currentCard = globalJSON.filter(element => element.id == nextID);
     if (currentCard.length == 0) {
         if (nextID.split(" ")[0] == "saddleHorse" ||
             nextID.split(" ")[0] == "pickedGame" ||
             nextID.split(" ")[0] == "playOneMoreGame" ||
-            nextID.split(" ")[0] == "playManyMoreGame") {
+            nextID.split(" ")[0] == "playManyMoreGame" ||
+            nextID.split(" ")[0] == "foundKey") {
             currentCard = globalJSON.filter(element => element.id == nextID.split(" ")[0]);
         }
     }
@@ -51,10 +115,8 @@ function nextCard(nextID) {
                     currentCard.responses[i].destination += " " + nextID.split(" ")[1];
                 }
             }
-            //Load text
-            $("body > div > div.text").html(innerHtmlContent);
             //Load img if we have one
-            if (currentCard.image != null || currentCard.id == "saddleHorse") {
+            if (currentCard.image != null || currentCard.id == "saddleHorse" || currentCard.id == "foundKey") {
                 let imgHTML;
                 if (currentCard.id == "saddleHorse") {
                     switch (nextID.split(" ")[1]) {
@@ -73,6 +135,31 @@ function nextCard(nextID) {
                         default:
                             break;
                     }
+                } else if (currentCard.id == "foundKey") {
+                    switch (nextID.split(" ")[1]) {
+                        case "1":
+                            //You found an old vinyl record case, look there
+                            imgHTML = `<img src="${"images/key/vinyl.jpg"}" alt="Vinyl case" style="width: auto; height: 18vw;"/>`;
+                            innerHtmlContent = innerHtmlContent.replaceAll("?{0}", "You find the key inside the record case.");
+                            break;
+                        case "2":
+                            //Look behind the curtains, it has to be there
+                            imgHTML = `<img src="${"images/key/curtain.jpg"}" alt="Curtains" style="width: auto; height: 18vw;"/>`;
+                            innerHtmlContent = innerHtmlContent.replaceAll("?{0}", "You find the key behind the curtains.");
+                            break;
+                        case "3":
+                            //It has to be in grandpa's old pair of shoes
+                            imgHTML = `<img src="${"images/key/shoes.jpg"}" alt="Shoes" style="width: auto; height: 18vw;"/>`;
+                            innerHtmlContent = innerHtmlContent.replaceAll("?{0}", "You find the key inside one of granpa's old shoes.");
+                            break;
+                        case "4":
+                            //Take a look inside grandpa's old backpack
+                            imgHTML = `<img src="${"images/key/backpack.jpg"}" alt="Backpack" style="width: auto; height: 18vw;"/>`;
+                            innerHtmlContent = innerHtmlContent.replaceAll("?{0}", "You find the key inside granpa's old backpack.");
+                            break;
+                        default:
+                            break;
+                    }
                 } else if (currentCard.image.customStyle != null) {
                     imgHTML = `<img src="${"images/" + currentCard.image.file}" alt="${currentCard.image.placeholder}" style="${currentCard.image.customStyle}" />`;
                 } else {
@@ -82,6 +169,14 @@ function nextCard(nextID) {
 
             } else {
                 $("body > div > div.img").html("");
+            }
+            //Load text
+            $("body > div > div.text").html(innerHtmlContent);
+            if (currentCard.id == "attic2") {
+                //Hide the key randomly
+                let keyPlacement = getRndInteger(1, 4);
+                console.log("Key is hidden in answer ", keyPlacement);
+                currentCard.responses[keyPlacement].destination = "foundKey " + keyPlacement;
             }
             //Load responses
             if (currentCard.responses.length == 1) {

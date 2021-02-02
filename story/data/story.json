@@ -51,6 +51,109 @@
             ]
         },
         {
+            "id": "attic",
+            "content": "<p>You go upstairs into the attic. The attic is a bit messy, so you start tidying it up. You find a lot of interesting stuff...",
+            "image": {
+                "file": "attic.jpg",
+                "placeholder": "A messy attic"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "attic2"
+            }]
+        },
+        {
+            "id": "attic2",
+            "content": "<p>You continue tidying up, and you find something huge covered with a white cloth. You remove the cloth, and under the cloth there is a huge chest. Unfortunately it is locked with a padlock, the key has to be somewhere around here...",
+            "image": {
+                "customStyle": "width: auto; height: 18vw;",
+                "file": "attic.jpg",
+                "placeholder": "A messy attic"
+            },
+            "responses": [{
+                    "content": "<p>Just pick the lock with a hairpin</p>",
+                    "destination": "pickLock"
+                },
+                {
+                    "content": "<p>You found an old vinyl record case, look there</p>",
+                    "destination": "noKey 1"
+                },
+                {
+                    "content": "<p>Look behind the curtains, it has to be there</p>",
+                    "destination": "noKey 2"
+                },
+                {
+                    "content": "<p>It has to be in grandpa's old pair of shoes</p>",
+                    "destination": "noKey 3"
+                },
+                {
+                    "content": "<p>Take a look inside grandpa's old backpack</p>",
+                    "destination": "noKey 4"
+                }
+            ]
+        },
+        {
+            "id": "foundKey",
+            "content": "<p>?{0} Pretty neat place to hide something - you think.<br>Then you jump in excitement and open the padlock...</p>",
+            "image": null,
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "chestOpen"
+            }]
+        },
+        {
+            "id": "chestOpen",
+            "content": "<p>You open the chest, it is full of green styrofoam packing material. You reach into the styrofoam and your hand touches something... just as you would take the item out your grandparents arrive home and tell you that they have never known what was in that chest.</p>",
+            "image": {
+                "customStyle": "width: auto; height: 18vw;",
+                "file": "fillingMaterial.jpg",
+                "placeholder": "Green styrofoam packing material"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "chestOpen2"
+            }]
+        },
+        {
+            "id": "chestOpen2",
+            "content": "<p>You pull out the item your hand touched. It's an old photo, you reach into the chest again and find many more old photos. Your grandma tells you that these are pictures from her childhood.<br>You take the pictures down into the living room and your grandma tells you stories about the pictures and her childhood until midnight.<br>This is my favourite day of summer - you think.</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "oldPhotos.jpg",
+                "placeholder": "A goldbar"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
+            "id": "chestOpen2",
+            "content": "<p>You try to pull out the item you just touched but you can't, so you ask grandpa for help. Together you pull out a heavy goldbar from the chest. Your grandpa almost drops the goldbar because he starts jumping in hapiness.</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "goldbar.jpg",
+                "placeholder": "A goldbar"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "theRichEnding"
+            }]
+        },
+        {
+            "id": "theRichEnding",
+            "content": "<p>Your grandparents become very happy. <br> Finally we can repair this old house! -grandma shouts. <br> We can travel around the world - says grandpa. <br><br> You talk about what you are going to do with all this money until the night comes.</p>",
+            "image": {
+                "customStyle": "width: auto; height: 20vw;",
+                "file": "goldPot.png",
+                "placeholder": "A gold pot with a rainbow"
+            },
+            "responses": [{
+                "content": "<p>The end</p>",
+                "destination": "theEnd"
+            }]
+        },
+        {
             "id": "stayHere",
             "content": "<p>You stay on this floor. You decide that you are going to explore the house.</p>",
             "image": {
