@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The end!</title>
+    <link rel="stylesheet" href="css/ending.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body onload="startAnimation()">
+    <div class="data-container">
+        <div id="hoverHere">
+            <div class="tooltiptext">
+                Novonty Levente
+                <br>Molnár Attila
+                <br>Klincsok Richárd
+            </div>
+            <h1 class="title" id="fade1" style="display: none;">A summer vacation at the grandparents</h1>
+            <h2 class="title" id="fade2" style="display: none;">Written by NovySoftware interns</h2>
+        </div>
+        <div class="stats">
+            <h3 id="fade3" style="display: none;">Story statistics:</h3>
+            <table id="fade4" style="display: none;">
+                <tbody>
+                    <tr>
+                        <td>Story cards:</td>
+                        <td id="storyCards">0</td>
+                    </tr>
+                    <tr>
+                        <td>Cards with decision:</td>
+                        <td id="decisionCard">0</td>
+                    </tr>
+                    <tr>
+                        <td>Decisions:</td>
+                        <td id="decisions">0</td>
+                    </tr>
+                    <tr>
+                        <td>Endings:</td>
+                        <td id="endings">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="centerButton" id="fade5" style="opacity: 0;"><a class="restartButton" onclick="startTheStory()">Restart</a></div>
+    </div>
+    <div class="footer" id="fade6" style="display: none;">
+        <pre>Hosted with love by <a style="color: blue" href="https://github.com/Legolaszstudio/choose-your-adventure">GitHub</a>           Images downloaded from <a style="color: blue" href="https://pixabay.com/hu/">PixaBay</a></pre>
+    </div>
+    <script>
+        var globalJSON;
+
+        function startTheStory() {
+            window.location.href = "../index.html";
+        }
+
+        async function startAnimation() {
+            console.log(" Loaded ");
+            loadStats();
+            $("#fade1").fadeIn(1000, 'swing', function() {
+                $("#fade2").fadeIn(1000, 'swing', function() {
+                    $("#fade3").fadeIn(1000, 'swing', function() {
+                        $("#fade4").fadeIn(1000, 'swing', function() {
+                            $("#fade5").css('display', 'none');
+                            $("#fade5").css('opacity', '1');
+                            $("#fade5").fadeIn(1000, 'swing', function() {
+                                $("#hoverHere").addClass("hoverArea");
+                                $("#fade6").fadeIn(1000, 'swing');
+                            });
+                        });
+                    });
+                });
+            });
+        }
+
+        async function loadStats() {
+            $.getJSON("data/story.json", function(data) {
+                globalJSON = data.story;
+                console.log("JSON loaded", data);
+                let cards = globalJSON.length;
+                let endings = globalJSON.filter(element => element.responses[0].destination == "theEnd").length;
+                let decisions = cards - endings;
+                let cardsWdecision = globalJSON.filter(element => element.responses.length > 1).length;
+                $("#storyCards").text(cards);
+                $("#decisionCard").text(cardsWdecision);
+                $("#decisions").text(decisions);
+                $("#endings").text(endings);
+            });
+        }
+    </script>
+</body>
+
+</html>
