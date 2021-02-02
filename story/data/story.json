@@ -30,7 +30,7 @@
         },
         {
             "id": "stayInside",
-            "content": "<p>You stay inside the house, you can stay on the current floor, go up to the attic or go down to the basement? You have to be careful because the house isn’t in a good shape!<br>What do you choose?</p>",
+            "content": "<p>You stay inside the house, you can stay on the current floor, go up to the attic or go down into the basement? You have to be careful because the house isn’t in a good shape!<br>What do you choose?</p>",
             "image": {
                 "customStyle": "width: auto; height: 20vw;",
                 "file": "upOrDown.jpg",
@@ -45,7 +45,7 @@
                     "destination": "stayHere"
                 },
                 {
-                    "content": "<p>Go down to the basement</p>",
+                    "content": "<p>Go down intto the basement</p>",
                     "destination": "basement"
                 }
             ]
@@ -168,7 +168,7 @@
         },
         {
             "id": "stayHere",
-            "content": "<p>You stay on this floor. You decide that you are going to explore the house.</p>",
+            "content": "<p>You stay on this floor. You look around and see a shelf and an empty table in the garden.</p>",
             "image": {
                 "customStyle": "width: auto; height: 20vw;",
                 "file": "upOrDown.jpg",
@@ -412,7 +412,7 @@
         },
         {
             "id": "secretRoom2",
-            "content": "<p>Just as you would touch one of the oscilloscopes on the desk, grandpa touches your shoulder. He tells you that he has been working on this gun like thing that allows people to transport from one place to another.<br>You help grandpa fix device's issues, patent it and start selling it. Later that year you receive a Nobel prize for your invention!</p>",
+            "content": "<p>Just as you would touch one of the oscilloscopes on the desk, grandpa touches your shoulder. He tells you that he has been working on this gun like thing that allows people to teleport from one place to another.<br>You help grandpa fix device's issues, patent it and start selling it. Later that year you receive a Nobel prize for your invention!</p>",
             "image": {
                 "file": "portalGun.jpg",
                 "placeholder": "A portal gun"
