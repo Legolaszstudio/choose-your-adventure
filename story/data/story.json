@@ -102,6 +102,19 @@
             }]
         },
         {
+            "id": "pickedLock",
+            "content": "<p>You manage to pick the lock. You feel proud because you have never been able to pick a lock.</p>",
+            "image": {
+                "customStyle": "width: auto; height: 18vw;",
+                "file": "/lockPicking/open.png",
+                "placeholder": "An open padlock"
+            },
+            "responses": [{
+                "content": "<p>Continue...</p>",
+                "destination": "chestOpen"
+            }]
+        },
+        {
             "id": "chestOpen",
             "content": "<p>You open the chest, it is full of green styrofoam packing material. You reach into the styrofoam and your hand touches something... just as you would take the item out your grandparents arrive home and tell you that they have never known what was in that chest.</p>",
             "image": {

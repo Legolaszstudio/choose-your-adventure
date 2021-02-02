@@ -1,9 +1,3 @@
-//CUSTOM CARDS:
-//PUT ON A RECORD
-//LOCK PICKING AND FIND THE KEY
-//PICK GAME
-//HORSE PICKING
-//
 var globalJSON;
 
 function loadJson() {
@@ -17,6 +11,18 @@ function loadJson() {
 }
 
 function nextCard(nextID) {
+    if (nextID == "pickLock") {
+        $(".modal-content").load("crackTheLock.html", function() {
+            window.targetClicks = getRndInteger(3, 15);
+            if ($(".modal")[0].style.display == "none") {
+                $(".modal")[0].style.display = "block";
+            }
+
+            $(".modal").toggleClass("showModal");
+            $(".modal").toggleClass("hideModal");
+        });
+        return;
+    }
     if (nextID.split(" ")[0] == "noKey") {
         //Disable where there was no key
         $(".text").fadeOut(500);

@@ -1,0 +1,24 @@
+<script>
+    var currClickCount = 0;
+
+    function padLockClick() {
+        currClickCount++;
+        console.log(`Target click ${window.targetClicks}, now ${currClickCount}`);
+        if (currClickCount >= window.targetClicks) {
+            console.log("crackedLock");
+            $("#padlock").attr("onclick", "");
+            $("#padlock").fadeOut(500);
+            $("#padlockOpen").fadeIn(500);
+            $(".padlockTitle").text("You cracked the lock, tap it one more time to continue!");
+        }
+    }
+
+    function crackedLock() {
+        $(".modal").toggleClass("showModal");
+        $(".modal").toggleClass("hideModal");
+        nextCard("pickedLock");
+    }
+</script>
+<p class="padlockTitle">Tap on the lock several times to crack it open!</p>
+<img id="padlock" src="images/lockPicking/closed.png" alt="Closed padlock" style="width: auto; height: 18vw;" onclick="padLockClick()"></img>
+<img id="padlockOpen" src="images/lockPicking/open.png" alt="Open padlock" style="width: auto; height: 18vw; display: none;" onclick="crackedLock()"></img>
