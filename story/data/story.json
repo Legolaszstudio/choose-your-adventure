@@ -30,14 +30,14 @@
         },
         {
             "id": "stayInside",
-            "content": "<p>You stay inside the house, you can stay on the current floor, go up to the attic or go down into the basement? You have to be careful because the house isn’t in a good shape!<br>What do you choose?</p>",
+            "content": "<p>You stay inside the house, you can stay on the current floor, go up into the attic or go down into the basement? You have to be careful because the house isn’t in a good shape!<br>What do you choose?</p>",
             "image": {
                 "customStyle": "width: auto; height: 20vw;",
                 "file": "upOrDown.jpg",
                 "placeholder": "Staircase"
             },
             "responses": [{
-                    "content": "<p>Go to the attic</p>",
+                    "content": "<p>Go into the attic</p>",
                     "destination": "attic"
                 },
                 {
@@ -52,7 +52,7 @@
         },
         {
             "id": "attic",
-            "content": "<p>You go upstairs into the attic. The attic is a bit messy, so you start tidying it up. You find a lot of interesting stuff...",
+            "content": "<p>You go upstairs into the attic. The attic is a bit messy, so you start tidying it up. You find a lot of interesting stuff while tidying up.",
             "image": {
                 "file": "attic.jpg",
                 "placeholder": "A messy attic"
@@ -103,7 +103,7 @@
         },
         {
             "id": "pickedLock",
-            "content": "<p>You manage to pick the lock. You feel proud because you have never been able to pick a lock.</p>",
+            "content": "<p>You manage to pick the lock. You feel proud because you have never been able to pick a lock before.</p>",
             "image": {
                 "customStyle": "width: auto; height: 18vw;",
                 "file": "/lockPicking/open.png",
@@ -129,7 +129,7 @@
         },
         {
             "id": "chestOpen2",
-            "content": "<p>You pull out the item your hand touched. It's an old photo, you reach into the chest again and find many more old photos. Your grandma tells you that these are pictures from her childhood.<br>You take the pictures down into the living room and your grandma tells you stories about the pictures and her childhood until midnight.<br>This is my favourite day of summer - you think.</p>",
+            "content": "<p>You pull out the item your hand touched. It's an old photo, you reach into the chest again and find many more old photos. Your grandma tells you that these are pictures from her childhood.<br>You take the pictures down into the living room and your grandma tells you stories about the pictures and her childhood until midnight.<br>This is my favourite day of summer - you think to yourself.</p>",
             "image": {
                 "customStyle": "width: auto; height: 20vw;",
                 "file": "oldPhotos.jpg",
@@ -186,7 +186,7 @@
         },
         {
             "id": "playBoardGames",
-            "content": "<p>Just as you would start searching for some board games your grandparents arrive. You ask your grandma whether she has some games to play with. <br> She comes comes back with three games, which one do you chose?</p>",
+            "content": "<p>Just as you would start searching for some board games your grandparents arrive. You ask your grandma whether she has some games to play with. <br> She comes back with three games, which one do you chose?</p>",
             "image": {
                 "customStyle": "width: auto; height: 20vw;",
                 "file": "boardGame.jpg",
@@ -239,7 +239,7 @@
         },
         {
             "id": "playOneMoreGame",
-            "content": "<p>You play one more game of ?{0} then you get bored so you try to use your phone but you have got no signal. <br> So instead you go outside</p>",
+            "content": "<p>You play one more game of ?{0} then you get bored so you try to use your phone but you have got no signal. <br> So instead you go outside.</p>",
             "image": {
                 "customStyle": "width: auto; height: 20vw;",
                 "file": "boardGame.jpg",
@@ -252,7 +252,7 @@
         },
         {
             "id": "helpWLunch",
-            "content": "<p>You decide to help grandma with lunch. You wonder around the house and find that you can help grandma in two ways:</p>",
+            "content": "<p>You decide to help grandma with lunch. You look around the house and find that you can help grandma in two ways:</p>",
             "image": {
                 "customStyle": "width: auto; height: 20vw;",
                 "file": "upOrDown.jpg",
@@ -376,7 +376,7 @@
         },
         {
             "id": "tunaSalad",
-            "content": "<p>You go upstairs to make tuna salad. Your grandparents arrive, you sit down to eat. <br> A few hours after lunch you all start feeling weird, so you go to a doctor. The doctor tells you it's probably food poisoning. The tuna you have eaten may have gone off a bit.</p>",
+            "content": "<p>You go upstairs to make tuna salad. Your grandparents arrive, you sit down to eat. <br> A few hours after lunch you all start feeling weird, so you go to a doctor. The doctor tells you it's probably food poisoning but nothing to worry about. The tuna you have eaten may have gone off a bit.</p>",
             "image": {
                 "file": "tunaSalad.jpg",
                 "placeholder": "A bowl of tuna salad"
@@ -516,7 +516,7 @@
         },
         {
             "id": "cows",
-            "content": "<p>You go to the cows. You can hear them moo. You find a bucket, a bar of soap and a pair of rubber gloves</p>",
+            "content": "<p>You go to the cows. You can hear them moo. You find a bucket, a bar of soap and a pair of rubber gloves.</p>",
             "image": {
                 "file": "cows.jpg",
                 "placeholder": "cows"
@@ -528,7 +528,7 @@
         },
         {
             "id": "milkTheCow",
-            "content": "<p>You milked one of the cows, it was a truly fascinating felling. Now you have a bucket full of milk.<br>What do you want to do with all this milk?</p>",
+            "content": "<p>You milked one of the cows, it was a truly fascinating experience. Now you have a bucket full of milk.<br>What do you want to do with all this milk?</p>",
             "image": {
                 "file": "manMilkingCow.jpg",
                 "placeholder": "Man milking the cow"
@@ -617,7 +617,7 @@
         },
         {
             "id": "chickens",
-            "content": "You go to the chickens house, it is a small brown house, it looks exactly like a dog house, just bigger. You find some eggs in their nests. <br> You put some of the eggs into your basket.",
+            "content": "You go to the chickens house, it is a small brown house, it looks exactly like a dog house, just bigger. You find some eggs in the nests. <br> You put some of the eggs into your basket.",
             "image": {
                 "file": "chickenWithEgg.jpg",
                 "placeholder": "Chicken with an egg"
@@ -642,7 +642,7 @@
         },
         {
             "id": "chickens2",
-            "content": "Just as you would grab some of the eggs a rooster attacks you. This is a huge rooster, it's much bigger than the usual ones. It start pecking your leg and flapping its wings furiously.",
+            "content": "Just as you would grab some of the eggs a rooster attacks you. It is a huge rooster, it's much bigger than the usual ones. It start pecking your leg and flapping its wings furiously.",
             "image": {
                 "file": "rooster.jpg",
                 "placeholder": "A rooster"
@@ -719,7 +719,7 @@
         },
         {
             "id": "afterQuestioning",
-            "content": "After questioning you are sent to court because the policemen couldn't decide what has really happened. Your story you told them didn’t quite make sense to them...",
+            "content": "After questioning you are sent to court because the policemen couldn't decide what has really happened. The story you told them didn’t quite make sense to them...",
             "image": {
                 "file": "gavel.jpg",
                 "placeholder": "Image of a gavel"
@@ -731,7 +731,7 @@
         },
         {
             "id": "lunchInGarden",
-            "content": "Your grandparents arrive and see that you have prepared a nice lunch in the garden. So you have a nice lunch together between nice smelling roses and under the summer sun.",
+            "content": "Your grandparents arrive and see that you have prepared a nice lunch in the garden. So you have lunch together between nice smelling roses under the summer sun.",
             "image": {
                 "file": "dinnerOutside.jpg",
                 "placeholder": "Dinner outside"
