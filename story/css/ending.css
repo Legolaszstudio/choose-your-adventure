@@ -108,11 +108,35 @@ br {
     text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+.possibleEndings{
+    text-align: center;
+    float: right;
+    margin-top: 5%;
+}
+
+@media only screen and (max-height: 775px) {
+    .hoverArea{
+        margin-top: 100%;
+    }
     .tooltiptext {
         display: none !important;
     }
     .footer {
         display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .possibleEndings{
+        float: none !important;
+        display: none !important;
+    }
+    .possibleEndingsMobile{
+        display: block !important;
+        float: none !important;
+        text-align: center;
+        float: right;
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
 }

@@ -7,6 +7,7 @@
     <title>The end!</title>
     <link rel="stylesheet" href="css/ending.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/sendWarningMessages.js"></script>
 </head>
 
 <body onload="startAnimation()">
@@ -40,13 +41,89 @@
                         <td>Endings:</td>
                         <td id="endings">0</td>
                     </tr>
+                    <tr>
+                        <td>You played through this many times:</td>
+                        <td id="plays">0</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
-        <div class="centerButton" id="fade5" style="opacity: 0;"><a class="restartButton" onclick="startTheStory()">Restart</a></div>
+        <div class="centerButton" id="fade5" style="opacity: 0;"><a class="restartButton"
+                onclick="startTheStory()">Restart</a></div>
+        <div class="possibleEndingsMobile" style="display: none;">
+        </div>
+    </div>
+    <div class="possibleEndings">
+        <h3">Possible Endings:</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Old photos:</td>
+                        <td id="oldPhotos">0</td>
+                    </tr>
+                    <tr>
+                        <td>The rich ending:</td>
+                        <td id="theRichEnding">0</td>
+                    </tr>
+                    <tr>
+                        <td>Game champion:</td>
+                        <td id="gameChampion">0</td>
+                    </tr>
+                    <tr>
+                        <td>Broken plate:</td>
+                        <td id="brokenPlate">0</td>
+                    </tr>
+                    <tr>
+                        <td>Tuna salad:</td>
+                        <td id="tunaSalad">0</td>
+                    </tr>
+                    <tr>
+                        <td>Portal gun:</td>
+                        <td id="portalGun">0</td>
+                    </tr>
+                    <tr>
+                        <td>The horse accident:</td>
+                        <td id="horseAccident">0</td>
+                    </tr>
+                    <tr>
+                        <td>Famous horse ridder:</td>
+                        <td id="famousHorse">0</td>
+                    </tr>
+                    <tr>
+                        <td>The butter ending:</td>
+                        <td id="butter">0</td>
+                    </tr>
+                    <tr>
+                        <td>The bad milk ending:</td>
+                        <td id="badMilk">0</td>
+                    </tr>
+                    <tr>
+                        <td>Super powers:</td>
+                        <td id="superPower">0</td>
+                    </tr>
+                    <tr>
+                        <td>Forest:</td>
+                        <td id="forest">0</td>
+                    </tr>
+                    <tr>
+                        <td>Released:</td>
+                        <td id="release">0</td>
+                    </tr>
+                    <tr>
+                        <td>Court:</td>
+                        <td id="court">0</td>
+                    </tr>
+                    <tr>
+                        <td>Lunch together:</td>
+                        <td id="lunchTogether">0</td>
+                    </tr>
+                </tbody>
+            </table>
     </div>
     <div class="footer" id="fade6" style="display: none;">
-        <p>Hosted with love by <a style="color: lightblue" href="https://github.com/Legolaszstudio/choose-your-adventure" target="_blank">GitHub</a> <br> Images downloaded from <a style="color: lightblue" href="https://pixabay.com/hu/" target="_blank">PixaBay</a></p>
+        <p>Hosted with love by <a style="color: lightblue"
+                href="https://github.com/Legolaszstudio/choose-your-adventure" target="_blank">GitHub</a> <br> Images
+            downloaded from <a style="color: lightblue" href="https://pixabay.com/hu/" target="_blank">PixaBay</a></p>
     </div>
     <script>
         var globalJSON;
@@ -56,15 +133,16 @@
         }
 
         async function startAnimation() {
-            console.log(" Loaded ");
+            console.log(" Loaded");
+            loadEndingStats();
             loadStats();
-            $("#fade1").fadeIn(1000, 'swing', function() {
-                $("#fade2").fadeIn(1000, 'swing', function() {
-                    $("#fade3").fadeIn(1000, 'swing', function() {
-                        $("#fade4").fadeIn(1000, 'swing', function() {
+            $("#fade1").fadeIn(1000, 'swing', function () {
+                $("#fade2").fadeIn(1000, 'swing', function () {
+                    $("#fade3").fadeIn(1000, 'swing', function () {
+                        $("#fade4").fadeIn(1000, 'swing', function () {
                             $("#fade5").css('display', 'none');
                             $("#fade5").css('opacity', '1');
-                            $("#fade5").fadeIn(1000, 'swing', function() {
+                            $("#fade5").fadeIn(1000, 'swing', function () {
                                 $("#hoverHere").addClass("hoverArea");
                                 $("#fade6").fadeIn(1000, 'swing');
                             });
@@ -74,12 +152,34 @@
             });
         }
 
+        async function loadEndingStats() {
+            //Desktop view
+            let childList = $(".possibleEndings")[0].children[0].children[0].children[0].children;
+            for (var i = 0; i <= childList.length; i++) {
+                if (childList[i] != null) {
+                    let item = childList[i].children[1];
+                    if (localStorage.getItem(item.id) == "true") {
+
+                        console.log("Ending completed:", item.id);
+                        item.innerHTML = "&#10004;";
+                        item.style.color = "lightgreen";
+                    } else {
+                        item.innerHTML = "&#10008;";
+                        item.style.color = "red";
+                    }
+                }
+            }
+
+            //Mobile view
+            $(".possibleEndingsMobile").html($(".possibleEndings").html());
+        }
+
         async function loadStats() {
-            $.getJSON("data/story.json", function(data) {
+            $.getJSON("data/story.json", function (data) {
                 globalJSON = data.story;
                 console.log("JSON loaded", data);
                 let cards = globalJSON.length;
-                let endings = globalJSON.filter(element => element.responses[0].destination == "theEnd").length;
+                let endings = globalJSON.filter(element => element.responses[0].destination.includes("theEnd")).length;
                 let cardsWdecision = globalJSON.filter(element => element.responses.length > 1).length;
                 let decisions = 0;
                 for (const element of globalJSON) {
@@ -90,6 +190,11 @@
                 $("#decisionCard").text(cardsWdecision);
                 $("#decisions").text(decisions);
                 $("#endings").text(endings);
+                if (localStorage.getItem("playedThrough") != null) {
+                    $("#plays").text(localStorage.getItem("playedThrough"));
+                } else {
+                    $("#plays").text(0);
+                }
             });
         }
     </script>

@@ -1,7 +1,7 @@
 var globalJSON;
 
 function loadJson() {
-    $.getJSON("data/story.json", function(data) {
+    $.getJSON("data/story.json", function (data) {
         globalJSON = data.story;
         console.log("JSON loaded", data);
         nextCard("start");
@@ -9,13 +9,21 @@ function loadJson() {
 }
 
 function nextCard(nextID) {
-    if (nextID == "theEnd") {
+    console.log("Requested card with id: ", nextID);
+    if (nextID.split(" ")[0] == "theEnd") {
+        localStorage.setItem(nextID.split(" ")[1], true);
+        if (localStorage.getItem("playedThrough") == null) {
+            localStorage.setItem("playedThrough", 1);
+        } else {
+            let currentTimes = Number(localStorage.getItem("playedThrough"));
+            localStorage.setItem("playedThrough", currentTimes + 1);
+        }
         $(".answerButton").html('<div class="centerLoader"><div class="loader"></div></div>');
-        window.location.href = "ending.html";
+        window.location.href = "ending.html?ending=" + nextID.split(" ")[1];
         return;
     }
     if (nextID == "pickLock") {
-        $(".modal-content").load("data/crackTheLock.html", function() {
+        $(".modal-content").load("data/crackTheLock.html", function () {
             window.targetClicks = getRndInteger(3, 10);
             if ($(".modal")[0].style.display == "none") {
                 $(".modal")[0].style.display = "block";
@@ -33,7 +41,7 @@ function nextCard(nextID) {
         switch (nextID.split(" ")[1]) {
             case "1":
                 //You found an old vinyl record case, look there
-                $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").fadeOut(500, 'swing', function() {
+                $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").fadeOut(500, 'swing', function () {
                     $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").removeClass("answerRed");
                     $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").addClass("answerDisabled");
                     $("table > tbody > tr:nth-child(1) > td:nth-child(1) > a").attr("onclick", "");
@@ -46,7 +54,7 @@ function nextCard(nextID) {
                 break;
             case "2":
                 //Look behind the curtains, it has to be there
-                $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").fadeOut(500, 'swing', function() {
+                $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").fadeOut(500, 'swing', function () {
                     $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").removeClass("answerBlue");
                     $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").addClass("answerDisabled");
                     $("table > tbody > tr:nth-child(1) > td:nth-child(2) > a").attr("onclick", "");
@@ -59,7 +67,7 @@ function nextCard(nextID) {
                 break;
             case "3":
                 //It has to be in grandpa's old pair of shoes
-                $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").fadeOut(500, 'swing', function() {
+                $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").fadeOut(500, 'swing', function () {
                     $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").removeClass("answerYellow");
                     $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").addClass("answerDisabled");
                     $("table > tbody > tr:nth-child(2) > td:nth-child(1) > a").attr("onclick", "");
@@ -72,7 +80,7 @@ function nextCard(nextID) {
                 break;
             case "4":
                 //Take a look inside grandpa's old backpack
-                $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").fadeOut(500, 'swing', function() {
+                $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").fadeOut(500, 'swing', function () {
                     $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").removeClass("answerOrange");
                     $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").addClass("answerDisabled");
                     $("table > tbody > tr:nth-child(2) > td:nth-child(2) > a").attr("onclick", "");
@@ -105,12 +113,12 @@ function nextCard(nextID) {
     } else {
         if (currentCard.length > 1) {
             let rndId = getRndInteger(0, currentCard.length - 1);
-            console.log("Chose id ", rndId);
+            console.log("Multiple cards found, picking one randomly:", rndId);
             currentCard = currentCard[rndId];
         } else {
             currentCard = currentCard[0];
         }
-        $(".content").fadeOut(1000, 'swing', function() {
+        $(".content").fadeOut(1000, 'swing', function () {
             var innerHtmlContent = currentCard.content;
             if (nextID.split(" ")[0] == "pickedGame" ||
                 nextID.split(" ")[0] == "playOneMoreGame" ||
@@ -263,12 +271,10 @@ function nextCard(nextID) {
                 </table>
                 `);
             }
-            $(".content").fadeIn(1000, 'swing', function() {
-                console.log("FADED IN");
-            });
+            $(".content").fadeIn(1000, 'swing');
         });
     }
-    console.log(currentCard);
+    console.log("Found requested card:", currentCard);
 }
 
 function getRndInteger(min, max) {

@@ -45,7 +45,7 @@
                     "destination": "stayHere"
                 },
                 {
-                    "content": "<p>Go down intto the basement</p>",
+                    "content": "<p>Go down into the basement</p>",
                     "destination": "basement"
                 }
             ]
@@ -133,11 +133,11 @@
             "image": {
                 "customStyle": "width: auto; height: 20vw;",
                 "file": "oldPhotos.jpg",
-                "placeholder": "A goldbar"
+                "placeholder": "OldPhotos"
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd oldPhotos"
             }]
         },
         {
@@ -163,7 +163,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd theRichEnding"
             }]
         },
         {
@@ -234,7 +234,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd gameChampion"
             }]
         },
         {
@@ -313,7 +313,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd brokenPlate"
             }]
         },
         {
@@ -383,7 +383,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd tunaSalad"
             }]
         },
         {
@@ -419,7 +419,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd portalGun"
             }]
         },
         {
@@ -498,7 +498,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd horseAccident"
             }]
         },
         {
@@ -511,7 +511,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd famousHorse"
             }]
         },
         {
@@ -564,7 +564,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd butter"
             }]
         },
         {
@@ -600,7 +600,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd badMilk"
             }]
         },
         {
@@ -612,7 +612,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd superPower"
             }]
         },
         {
@@ -678,7 +678,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd forest"
             }]
         },
         {
@@ -714,7 +714,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd release"
             }]
         },
         {
@@ -726,7 +726,7 @@
             },
             "responses": [{
                 "content": "<p>The end.</p>",
-                "destination": "theEnd"
+                "destination": "theEnd court"
             }]
         },
         {
@@ -738,7 +738,7 @@
             },
             "responses": [{
                 "content": "<p>The end</p>",
-                "destination": "theEnd"
+                "destination": "theEnd lunchTogether"
             }]
         }
     ]
